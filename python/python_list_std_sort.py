@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# Usage:
+# ./python_std_sort.py list|array|np_array
+
 import time, array, numpy, sys
 
 def getDataStructure(size):
@@ -14,7 +17,7 @@ def getDataStructure(size):
     elif structure == 'np_array':
         return numpy.array(data, dtype=int)
 
-input_data = open('input_data.txt', 'r')
+input_data = open('../input_data.txt', 'r')
 
 size = int(input_data.readline())
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-# Usage: ./rand_generator.py [amount]
+# Usage: ./rand_generator.py amount
 
 import sys, random, time
 
