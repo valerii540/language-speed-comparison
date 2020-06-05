@@ -13,5 +13,10 @@ Lang|#1|#2|#3|#4|#5|avg
 Python (list)|13.27s|13.42s|13.49s|13.41s|13.38s|
 Python (array)|14.31s|14.45s|14.64s|14.32s|14.51s|
 Python (np array)|22.42s|23.17s|22.51s|22.23s|22.43s|
-Scala (im List)|24.77s|27.60s|25.38s|20.75s|25.53s|
-Scala (im ArraySeq)|1.72s|1.68s|1.68s|1.66s|1.78s|
+Scala (List)|24.77s|27.60s|25.38s|20.75s|25.53s|
+Scala (Vector)|13.77s|13.47s|13.64s|13.31s|13.36s|
+Scala (Java Array)|1.73s|1.84s|1.70s|1.66s|1.78s|
+Scala (ArraySeq)|1.72s|1.68s|1.68s|1.66s|1.78s|
+Scala (ListBuffer)|error|error|-|-|-|-|
+Scala (m ArraySeq)|1.75s|1.65s|1.62s|1.66s|1.67s|
+Scala (ArrayBuffer)|15.26s|15.30s|14.89s|15.08s|10.02s|
