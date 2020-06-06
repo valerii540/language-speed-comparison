@@ -20,3 +20,15 @@ Scala (ArraySeq)|1.72s|1.68s|1.68s|1.66s|1.78s|
 Scala (ListBuffer)|error|error|-|-|-|-|
 Scala (m ArraySeq)|1.75s|1.65s|1.62s|1.66s|1.67s|
 Scala (ArrayBuffer)|15.26s|15.30s|14.89s|15.08s|10.02s|
+C++ (array)|4.49s|4.50s|4.49s|4.53s|4.52s|
+C++ (array O2)|1.33s|1.33s|1.32s|1.36s|1.33s|
+C++ (array O3)|1.37s|1.39s|1.39s|1.38s|1.37s|
+C++ (std::valarray)|4.48s|4.48s|4.5s|4.48s|4.58s|
+C++ (std::valarray O2)|1.32s|1.33s|1.33s|1.35s|1.35s|
+C++ (std::valarray O3)|1.39s|1.42s|1.41s|1.43s|1.4s|
+C++ (std::vector)|7.18s|7.11s|7.16s|7.16s|7.28s|
+C++ (std::vector O2)|1.33s|1.35s|1.34s|1.33s|1.33s|
+C++ (std::vector O3)|1.41s|1.41s|1.42s|1.42s|1.43s|
+C++ (std::list)|24.52s|24.6s|24.46s|24.47s|24.60s|
+C++ (std::list O2)|11.43s|11.7s|11.72s|11.53s|11.66s|
+C++ (std::list O3)|11.32s|11.5s|11.42s|11.34s|11.62s|

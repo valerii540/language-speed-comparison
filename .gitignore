@@ -8,3 +8,5 @@ scala/target
 scala/*.class
 .bloop/
 .metals/
+
+cpp/*.out
