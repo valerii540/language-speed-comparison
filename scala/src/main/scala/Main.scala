@@ -2,34 +2,35 @@ import scala.io.Source
 import scala.collection.mutable
 import scala.collection.immutable
 
+import java.io.File
+
 object Main {
 
   def main(args: Array[String]): Unit = { 
     if (args.length < 1) throw new Exception("Argument hasn't been provided")
 
-    val file =  Source.fromFile("../input_data.txt")
-    val lines = file.getLines
-    val size = lines.next.toInt
+    val file         = Source.fromFile(new File("../input_data.txt"))
+    val lineIterator = file.getLines.iterator
+    val size         = lineIterator.next.toInt
   
+    val buffer = new Array[Int](size)
+    for (i <- (0 until size)) buffer(i) = lineIterator.next.toInt
 
-    val buffer = mutable.ListBuffer.empty[Int]
-    for (_ <- (1 to size)) buffer += lines.next.toInt
-  
     file.close()
-
+    
     val data = getDataStructure(args.head, buffer)
 
-    println(s"${data.length} integers have been loaded into memory")
+    println(f"${data.length} integers have been loaded to ${args.head}")
 
     val tic = System.nanoTime
     data.sorted
     val toc = System.nanoTime
 
-    val elapsed = ((toc - tic) / 1_000_000_000d)
-    println(f"\n==> sorted in $elapsed%.2fs <==")
+    val duration = (toc - tic) / 1_000_000_000d
+    println(f"\n==> sorted in $duration%.2fs <==")
   } 
 
-  def getDataStructure(desired: String, data: Iterable[Int]): scala.collection.Seq[Int] = 
+  def getDataStructure(desired: String, data: Array[Int]): scala.collection.Seq[Int] = 
     desired match {
       case "list"         => immutable.List.from(data)
       case "vector"       => immutable.Vector.from(data)
