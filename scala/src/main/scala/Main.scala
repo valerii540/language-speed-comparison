@@ -2,14 +2,12 @@ import scala.io.Source
 import scala.collection.mutable
 import scala.collection.immutable
 
-import java.io.File
-
 object Main {
 
   def main(args: Array[String]): Unit = { 
     if (args.length < 1) throw new Exception("Argument hasn't been provided")
 
-    val file         = Source.fromFile(new File("../input_data.txt"))
+    val file         = Source.fromFile("../input_data.txt")
     val lineIterator = file.getLines.iterator
     val size         = lineIterator.next.toInt
   
