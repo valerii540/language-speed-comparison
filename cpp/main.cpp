@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <vector>
@@ -16,17 +17,16 @@ enum StructureTypes {
     invalid_type
 };
 
-StructureTypes resolveType(string input) {
-    if (input == "array") return StructureTypes::common_array;
-    if (input == "std_vector") return StructureTypes::std_vector;
-    if (input == "std_list") return StructureTypes::std_list;
-    if (input == "std_valarray") return StructureTypes::std_valarray;
+StructureTypes resolveType(const string desired) {
+    if (desired == "array")        return StructureTypes::common_array;
+    if (desired == "std_vector")   return StructureTypes::std_vector;
+    if (desired == "std_list")     return StructureTypes::std_list;
+    if (desired == "std_valarray") return StructureTypes::std_valarray;
 
     return StructureTypes::invalid_type;
 }
 
 //TODO: unify sorting call for all data structures if possible
-//TODO: round elapsed time by 2 digits after dot 
 int main(int argc, char **argv) {
     if (argc == 1) {
         cout << "Error: structure type must be passed as CMD argument!" << endl;
@@ -106,8 +106,9 @@ int main(int argc, char **argv) {
             }
         }
 
-        long elapsed = chrono::duration_cast<chrono::nanoseconds>(toc-tic).count();
-        cout << "\n==> sorted in " << elapsed / 1000000000.0 << " seconds <==";
+        auto duration = chrono::duration_cast<chrono::milliseconds>(toc-tic).count();
+
+        cout << fixed << setprecision(2) << "\n==>" << duration << endl;
         
         inputFile.close();
     } 

@@ -18,14 +18,14 @@ object Main {
     
     val data = getDataStructure(args.head, buffer)
 
-    println(f"${data.length} integers have been loaded to ${args.head}")
+    println(f"${data.length} integers have been loaded into ${args.head}")
 
     val tic = System.nanoTime
     data.sorted
     val toc = System.nanoTime
 
-    val duration = (toc - tic) / 1_000_000_000d
-    println(f"\n==> sorted in $duration%.2fs <==")
+    val duration = (toc - tic) / 1_000_000f
+    println(f"\n==>$duration%.2f")
   } 
 
   def getDataStructure(desired: String, data: Array[Int]): scala.collection.Seq[Int] = 

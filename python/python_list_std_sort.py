@@ -10,12 +10,9 @@ def getDataStructure(size):
     data = []
     for _ in range(size):
         data.append(int(input_data.readline()))
-    if structure == 'list':
-        return data
-    elif structure == 'array':
-        return array.array('i', data)
-    elif structure == 'np_array':
-        return numpy.array(data, dtype=int)
+    if structure == 'list': return data
+    if structure == 'array': return array.array('i', data)
+    if structure == 'np_array': return numpy.array(data, dtype=int)
 
 input_data = open('../input_data.txt', 'r')
 
@@ -24,11 +21,11 @@ size = int(input_data.readline())
 input_data.close
 
 data = getDataStructure(size)
-print("Using {} for test".format(type(data)))
-print('{:,} integers have been loaded into memory'.format(len(data)))
 
-tic = time.time()
+print('{:,} integers have been loaded into {}'.format(len(data), type(data)))
+
+tic = round(time.time() * 1000, 2)
 sorted(data)
-toc = time.time()
+toc = round(time.time() * 1000, 2)
 
-print("\n==> sorted in {} seconds <==".format(round(toc - tic, 2)))
+print("\n==>%.2f" % (toc - tic))
